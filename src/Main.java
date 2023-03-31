@@ -35,6 +35,12 @@ public class Main {
             default -> System.out.println("Critical error! Something went wrong!");
         }
 
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        } // A little pause to don't get confused
+
         int dragonAttackType = random.nextInt(1, 5);
         if (dragonAttackType == 1) {
             dragon.releaseFireBall(knight);
