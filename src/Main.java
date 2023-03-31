@@ -5,14 +5,26 @@ public class Main {
     public static void main(String[] args) {
         Dragon dragon = new Dragon();
         Knight knight = new Knight();
+
+        while (dragon.getHitPoints() > 0 || knight.getHitPoints() > 0) {
+            initializeGame(dragon, knight);
+        }
     }
 
     public static void initializeGame(Dragon dragon, Knight knight) {
+        Random random = new Random();
+
+        System.out.printf("Your hp: %d%n", knight.getHitPoints());
+        System.out.printf("Dragon's hp: %d%n", dragon.getHitPoints());
+
+        System.out.println();
+
         System.out.print("""
                 Enter to select an action:
                 1 - attack
                 2 - try to block
-                3 - heal (+220)""");
+                3 - heal (+220)
+                \t:""");
 
         int action = getNeedNumber(1, 4);
 
@@ -21,6 +33,13 @@ public class Main {
             case 2 -> knight.tryToBlock(dragon);
             case 3 -> knight.heal();
             default -> System.out.println("Critical error! Something went wrong!");
+        }
+
+        int dragonAttackType = random.nextInt(1, 5);
+        if (dragonAttackType == 1) {
+            dragon.releaseFireBall(knight);
+        } else {
+            dragon.attack(knight);
         }
     }
 
