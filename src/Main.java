@@ -36,7 +36,7 @@ public class Main {
         }
 
         try {
-            Thread.sleep(3000);
+            Thread.sleep(1400);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         } // A little pause to don't get confused
@@ -47,6 +47,13 @@ public class Main {
         } else {
             dragon.attack(knight);
         }
+
+        System.out.println("""
+                
+                
+                -------------------------------------------------------------------
+                
+                """);
     }
 
     public static int getNeedNumber(int minValue, int maxValue) {
