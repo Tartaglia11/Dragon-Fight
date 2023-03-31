@@ -43,8 +43,8 @@ public class Dragon {
     }
 
     public void attack(Knight knight) {
-        knight.setHitPoints(knight.getHitPoints() - damage);
-        System.out.println("The dragon attacked you! (-" + damage +")");
+        knight.setHitPoints(knight.getHitPoints() - (damage - knight.getDefence()));
+        System.out.println("The dragon attacked you! (-" + (damage - knight.getDefence()) +")");
     }
 
     public void releaseFireBall(Knight knight) {

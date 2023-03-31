@@ -8,7 +8,7 @@ public class Knight {
 
     public Knight() {
         hitPoints = 2000;
-        damage = 150;
+        damage = 170;
         defence = 80;
     }
 
@@ -19,8 +19,8 @@ public class Knight {
     }
 
     public void attack(Dragon dragon) {
-        dragon.setHitPoints(dragon.getHitPoints() - damage);
-        System.out.printf("%d damage! Now the dragon have a %d hp%n", damage, dragon.getHitPoints());
+        dragon.setHitPoints(dragon.getHitPoints() - (damage - dragon.getDefence()));
+        System.out.printf("%d damage! Now the dragon have a %d hp%n", damage - dragon.getDefence(), dragon.getHitPoints());
     }
 
     public void tryToBlock(Dragon dragon) {
@@ -29,7 +29,7 @@ public class Knight {
         if (chanceToBlock > 7) {
             System.out.println("The dragon crushed your block!");
         } else {
-            hitPoints += dragon.getDamage();
+            defence += dragon.getDefence();
         }
     }
 
