@@ -49,6 +49,6 @@ public class Dragon {
 
     public void releaseFireBall(Knight knight) {
         knight.setHitPoints(knight.getHitPoints() - 350); //Fireball damage
-        System.out.println("The dragon sent you a fire ball! Your hp: " + knight.getHitPoints());
+        System.out.println("The dragon sent you a fire ball (-350)! Your hp: " + knight.getHitPoints());
     }
 }
