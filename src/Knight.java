@@ -1,19 +1,22 @@
 public class Knight {
 
+    private int currentHitPoints;
     private int hitPoints;
     private int damage;
     private int defence;
 
     public Knight() {
-        hitPoints = 2000;
+        currentHitPoints = 2000;
         damage = 170;
         defence = 80;
+        hitPoints = currentHitPoints;
     }
 
-    public Knight(int hitPoints, int damage, int defence) {
-        this.hitPoints = hitPoints;
+    public Knight(int currentHitPoints, int damage, int defence) {
+        this.currentHitPoints = currentHitPoints;
         this.damage = damage;
         this.defence = defence;
+        hitPoints = currentHitPoints;
     }
 
     public void attack(Dragon dragon) {
@@ -28,20 +31,20 @@ public class Knight {
     }
 
     public void heal() {
-        if (hitPoints >= 2000) {
-            System.out.println("You tried to drink a potion, but you already have full hp, and you skipped a turn");
+        if (currentHitPoints >= hitPoints || currentHitPoints + 220 > hitPoints) {
+            System.out.println("You tried to drink a potion, but you already have enough hp, and you skipped a turn");
         } else {
-            hitPoints += 220;
-            System.out.println("You drank magic potion. Your hp: " + hitPoints);
+            currentHitPoints += 220;
+            System.out.println("You drank magic potion. Your hp: " + currentHitPoints);
         }
     }
 
-    public int getHitPoints() {
-        return hitPoints;
+    public int getCurrentHitPoints() {
+        return currentHitPoints;
     }
 
-    public void setHitPoints(int hitPoints) {
-        this.hitPoints = hitPoints;
+    public void setCurrentHitPoints(int currentHitPoints) {
+        this.currentHitPoints = currentHitPoints;
     }
 
     public int getDamage() {

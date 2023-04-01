@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public class Dragon {
     private int hitPoints;
     private int damage;
@@ -43,12 +41,12 @@ public class Dragon {
     }
 
     public void attack(Knight knight) {
-        knight.setHitPoints(knight.getHitPoints() - (damage - knight.getDefence()));
+        knight.setCurrentHitPoints(knight.getCurrentHitPoints() - (damage - knight.getDefence()));
         System.out.println("The dragon attacked you! (-" + (damage - knight.getDefence()) + ")");
     }
 
     public void releaseFireBall(Knight knight) {
-        knight.setHitPoints(knight.getHitPoints() - 350); //Fireball damage
-        System.out.println("The dragon sent you a fire ball (-350)! Your hp: " + knight.getHitPoints());
+        knight.setCurrentHitPoints(knight.getCurrentHitPoints() - 350); //Fireball damage
+        System.out.println("The dragon sent you a fire ball (-350)! Your hp: " + knight.getCurrentHitPoints());
     }
 }

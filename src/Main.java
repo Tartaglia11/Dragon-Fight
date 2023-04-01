@@ -10,10 +10,10 @@ public class Main {
         Dragon dragon = new Dragon(2500, 200, 65);
         Knight knight = new Knight(2000, 170, 80);
 
-        while (dragon.getHitPoints() > 0 && knight.getHitPoints() > 0){
+        while (dragon.getHitPoints() > 0 && knight.getCurrentHitPoints() > 0){
             Random random = new Random();
 
-            System.out.printf("Your hp: %d%n", knight.getHitPoints());
+            System.out.printf("Your hp: %d%n", knight.getCurrentHitPoints());
             System.out.printf("Dragon's hp: %d%n", dragon.getHitPoints());
 
             System.out.println();
