@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public class Knight {
 
     private int hitPoints;
@@ -23,14 +21,10 @@ public class Knight {
         System.out.printf("%d damage! Now the dragon have a %d hp%n", damage - dragon.getDefence(), dragon.getHitPoints());
     }
 
-    public void tryToBlock(Dragon dragon) {
-        Random random = new Random();
-        int chanceToBlock = random.nextInt(1, 11);
-        if (chanceToBlock > 7) {
-            System.out.println("The dragon crushed your block!");
-        } else {
-            defence += dragon.getDefence();
-        }
+    public void block(Dragon dragon) {
+        dragon.setDamage(0);
+        defence = 0;
+        System.out.println("You stopped attack");
     }
 
     public void heal() {

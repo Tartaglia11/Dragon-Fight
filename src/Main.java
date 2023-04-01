@@ -29,7 +29,7 @@ public class Main {
 
             switch (action) {
                 case 1 -> knight.attack(dragon);
-                case 2 -> knight.tryToBlock(dragon);
+                case 2 -> knight.block(dragon);
                 case 3 -> knight.heal();
                 default -> System.out.println("Critical error! Something went wrong!");
             }
@@ -46,6 +46,10 @@ public class Main {
             } else {
                 dragon.attack(knight);
             }
+
+
+            dragon.setDamage(200); //return damage and defence after 'block' method
+            knight.setDefence(80);
 
             System.out.println("""
                 
