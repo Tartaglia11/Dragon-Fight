@@ -7,8 +7,8 @@ public class Main {
     }
 
     public static void initializeGame() {
-        Dragon dragon = new Dragon();
-        Knight knight = new Knight();
+        Dragon dragon = new Dragon(2500, 200, 65);
+        Knight knight = new Knight(2000, 170, 80);
 
         while (dragon.getHitPoints() > 0 && knight.getHitPoints() > 0){
             Random random = new Random();

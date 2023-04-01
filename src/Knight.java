@@ -28,8 +28,12 @@ public class Knight {
     }
 
     public void heal() {
-        hitPoints += 220;
-        System.out.println("You drank magic water. Your hp: " + hitPoints);
+        if (hitPoints >= 2000) {
+            System.out.println("You tried to drink a potion, but you already have full hp, and you skipped a turn");
+        } else {
+            hitPoints += 220;
+            System.out.println("You drank magic potion. Your hp: " + hitPoints);
+        }
     }
 
     public int getHitPoints() {
