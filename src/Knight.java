@@ -19,6 +19,7 @@ public class Knight {
         hitPoints = currentHitPoints;
     }
 
+
     public void attack(Dragon dragon) {
         dragon.setHitPoints(dragon.getHitPoints() - (damage - dragon.getDefence()));
         System.out.printf("%d damage! Now the dragon have a %d hp%n", damage - dragon.getDefence(), dragon.getHitPoints());
@@ -45,14 +46,6 @@ public class Knight {
 
     public void setCurrentHitPoints(int currentHitPoints) {
         this.currentHitPoints = currentHitPoints;
-    }
-
-    public int getDamage() {
-        return damage;
-    }
-
-    public void setDamage(int damage) {
-        this.damage = damage;
     }
 
     public int getDefence() {

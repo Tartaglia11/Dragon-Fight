@@ -24,20 +24,12 @@ public class Dragon {
         this.hitPoints = hitPoints;
     }
 
-    public int getDamage() {
-        return damage;
-    }
-
     public void setDamage(int damage) {
         this.damage = damage;
     }
 
     public int getDefence() {
         return defence;
-    }
-
-    public void setDefence(int defence) {
-        this.defence = defence;
     }
 
     public void attack(Knight knight) {
