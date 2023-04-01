@@ -1,7 +1,7 @@
 public class Knight {
 
     private int currentHitPoints;
-    private int hitPoints;
+    private final int hitPoints;
     private int damage;
     private int defence;
 
